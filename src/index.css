@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+    --bg: #050508;
+    --bg1: #09090e;
+    --bg2: #0e0e16;
+    --surface: #12121c;
+    --surface2: #181824;
+    --border: rgba(255, 255, 255, 0.06);
+    --border2: rgba(255, 255, 255, 0.1);
+    --accent: #5b8af5;
+    --accent2: #a78bfa;
+    --green: #34d399;
+    --text: #e8e8f0;
+    --muted: #555568;
+    --mono: 'JetBrains Mono', monospace;
+    --display: 'Syne', sans-serif;
+}
+
+body {
+    /* background: var(--bg); */
+    color: var(--text);
+    font-family: var(--mono);
+    font-weight: 300;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    cursor: none;
+}
+
+/* Nav */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    border-bottom: 1px solid transparent;
+    transition: background .4s, border-color .4s;
+}
+
+nav.scrolled {
+    background: rgba(5, 5, 8, .9);
+    backdrop-filter: blur(16px);
+    border-color: var(--border);
+}
+
+.blink {
+  background-color: var(--accent);
+  height: 13px;
+  width: 8px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+#nav-logo {
+  font-family: var(--mono);
+}
+
+.links::before {
+  content: '// ';
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.links:hover {
+  color: var(--text);
+}
+
+.links:hover::before {
+  opacity: 1;
+}
+
