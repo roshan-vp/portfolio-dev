@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Cursor() {
   const cursorRef = useRef(null);
@@ -30,23 +30,28 @@ export default function Cursor() {
     return () => document.removeEventListener("mousemove", move);
   }, []);
 
-  document.querySelectorAll('.nav-links, #nav-logo').forEach(el => {
-      el.addEventListener('mouseenter', () => {
+  useEffect(() => {
+      let hover = document.querySelectorAll('.nav-links, #nav-logo, .button');
+      hover.forEach(el => {
+        el.addEventListener('mouseenter', () => {
           cursorRef.current.style.width = '18px';
           cursorRef.current.style.height = '18px';
           cursorRef.current.style.background = 'var(--accent2)';
           cursorRef.current.style.transition = 'width 0.3s ease, height 0.3s ease, background 0.3s ease';
-      });
-      el.addEventListener('mouseleave', () => {
+          cursorRef.current.style.zIndex = '20';
+        })
+        el.addEventListener('mouseleave', () => {
           cursorRef.current.style.width = '12px';
           cursorRef.current.style.height = '12px';
           cursorRef.current.style.background = 'var(--accent)';
-      });
-  })
+        })
+      })
+  }, [])
 
   return (
     <div>
       <div
+        id="cursor"
         ref={cursorRef}
         className="fixed top-0 left-0 pointer-events-none w-3 h-3 bg-(--accent) rounded-full z-50"
       ></div>
