@@ -56,7 +56,7 @@ export default function ProjectCards() {
             <p className='text-sm hover:text-(--accent) transition duration-300 proj-name'>{project.title}</p>
             <p className='flex gap-2'>
               {project.techStack.map((tech, i) => (
-                <span key={i} className='py-1 px-2 text-xs bg-[#10111B] text-(--muted) group-hover:text-(--accent) border border-[#5050503e] transition duration-300'>
+                <span key={i} className='py-1 px-2 text-[10px] bg-[#10111B] text-(--muted) group-hover:text-(--accent) border border-[#5050503e] transition duration-300'>
                   {tech}
                 </span>
               ))}
