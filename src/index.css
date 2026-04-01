@@ -231,3 +231,13 @@ nav.scrolled {
     letter-spacing: -.04em;
     line-height: 1;
 }
+
+/* Projects */
+.contact-big {
+    font-family: var(--display);
+    font-size: clamp(3rem, 6vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: .9;
+    margin-bottom: 32px;
+}
