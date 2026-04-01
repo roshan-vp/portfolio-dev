@@ -78,7 +78,7 @@ export default function Hero() {
             <Button
               text={<span className="z-30 flex items-center gap-2">./view_work <MoveUpRight size={16} /></span>}
               className={
-                "button flex bg-(--accent) px-5 rounded text-sm text-black py-2.75"
+                "button flex bg-(--accent) px-5 rounded text-sm text-black py-2.75 hover:translate-y-0.5 transition duration-300"
               }
               id='btn'
             />

@@ -3,7 +3,7 @@ import ProjectCards from '../components/ProjectCards'
 
 export default function Projects() {
   return (
-    <section id='projects' className='min-h-screen pt-30'>
+    <section id='projects' className='min-h-screen py-30 border-b border-[#1e1e26]'>
         <p className='dash'>Work</p>
         <div className='flex justify-between'>
             <h1 className='proj-title flex-7'>Projects.</h1>
